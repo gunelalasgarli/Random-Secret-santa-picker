@@ -2,18 +2,18 @@ window.onload = function() {
     drawList();
 };
 
-var give = ['Günel', 'Məhəmməd', 'Həmidə', 'Fidan'];
-var receive = give.concat();
-var peopleWrap = document.getElementById('peopleWrap');
-var people = document.getElementById('people');
-var choose = document.getElementById('choose');
-var result = document.getElementById('result');
-var close = document.getElementById('close');
+let give = ['Günel', 'Məhəmməd', 'Həmidə', 'Fidan'];
+let receive = give.concat();
+let peopleWrap = document.getElementById('peopleWrap');
+let people = document.getElementById('people');
+let choose = document.getElementById('choose');
+let result = document.getElementById('result');
+let close = document.getElementById('close');
 
 function drawList() {
     people.innerHTML = '<option value="">Kimsiniz?</option>';
-    for (var i = give.length - 1; i >= 0; i--) {
-        var option = document.createElement('option');
+    for (let i = give.length - 1; i >= 0; i--) {
+        let option = document.createElement('option');
         option.value = i;
         option.innerHTML = give[i];
         people.appendChild(option);
@@ -21,14 +21,14 @@ function drawList() {
 }
 
 function selectPerson(person) {
-    var name = give[person];
-    var nameIndex = receive.indexOf(name);
+    let name = give[person];
+    let nameIndex = receive.indexOf(name);
 
     if (nameIndex >= 0) {
         receive.splice(nameIndex, 1);
     }
-    var recipient = Math.floor((Math.random() * receive.length));
-    var recipientName = receive[recipient];
+    let recipient = Math.floor((Math.random() * receive.length));
+    let recipientName = receive[recipient];
 
     receive.splice(recipient, 1);
     give.splice(person, 1);
